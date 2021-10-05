@@ -6,6 +6,7 @@ import { AddressModule } from "./address/address.module";
 import { ProductModule } from "./product/product.module";
 import { ACLModule } from "./auth/acl.module";
 import { AuthModule } from "./auth/auth.module";
+import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
 import { MorganModule } from "nest-morgan";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { ServeStaticModule } from "@nestjs/serve-static";
@@ -22,6 +23,7 @@ import { GraphQLModule } from "@nestjs/graphql";
     ProductModule,
     ACLModule,
     AuthModule,
+    SecretsManagerModule,
     MorganModule,
     ConfigModule.forRoot({ isGlobal: true }),
     ServeStaticModule.forRootAsync({
