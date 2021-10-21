@@ -1,5 +1,5 @@
 {
-  "name": "sample-app-3-server",
+  "name": "sample-app-server",
   "private": true,
   "scripts": {
     "start": "nest start",
