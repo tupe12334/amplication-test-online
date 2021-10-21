@@ -1,10 +1,10 @@
-import { StringFilter } from "../../util/StringFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { StringFilter } from "../../util/StringFilter";
 import { FloatNullableFilter } from "../../util/FloatNullableFilter";
 
 export type ProductWhereInput = {
-  id?: StringFilter;
-  name?: StringNullableFilter;
-  itemPrice?: FloatNullableFilter;
   description?: StringNullableFilter;
+  id?: StringFilter;
+  itemPrice?: FloatNullableFilter;
+  name?: StringNullableFilter;
 };
