@@ -1,19 +1,19 @@
 {
-  "dataServiceGeneratorVersion": "0.9.0",
+  "dataServiceGeneratorVersion": "0.10.1",
   "appInfo": {
-    "name": "Sample app-3",
+    "name": "Test-online",
     "description": "Sample application for e-commerce",
-    "version": "nfp7n4h9",
-    "id": "ckue0jn4u0343j8xhpdyxdbo5",
-    "url": "http://localhost:3000/ckue0jn4u0343j8xhpdyxdbo5",
+    "version": "pr6rtxfj",
+    "id": "ckue038x54506301bs619h9oofa",
+    "url": "https://app.amplication.com/ckue038x54506301bs619h9oofa",
     "settings": {
       "dbHost": "localhost",
       "dbName": "",
       "dbPassword": "admin",
       "dbPort": 5432,
       "dbUser": "admin",
-      "appId": "ckue0jn4u0343j8xhpdyxdbo5",
-      "authProvider": "Jwt"
+      "appId": "ckue038x54506301bs619h9oofa",
+      "authProvider": "Http"
     }
   }
 }
