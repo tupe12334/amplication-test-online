@@ -15,7 +15,7 @@ import { UserWhereUniqueInput } from "./UserWhereUniqueInput";
 import { UserFindManyArgs } from "./UserFindManyArgs";
 import { UserUpdateInput } from "./UserUpdateInput";
 import { User } from "./User";
-@swagger.ApiBearerAuth()
+@swagger.ApiBasicAuth()
 export class UserControllerBase {
   constructor(
     protected readonly service: UserService,
@@ -60,13 +60,13 @@ export class UserControllerBase {
     return await this.service.create({
       data: data,
       select: {
-        id: true,
         createdAt: true,
-        updatedAt: true,
         firstName: true,
+        id: true,
         lastName: true,
-        username: true,
         roles: true,
+        updatedAt: true,
+        username: true,
       },
     });
   }
@@ -104,13 +104,13 @@ export class UserControllerBase {
     const results = await this.service.findMany({
       ...args,
       select: {
-        id: true,
         createdAt: true,
-        updatedAt: true,
         firstName: true,
+        id: true,
         lastName: true,
-        username: true,
         roles: true,
+        updatedAt: true,
+        username: true,
       },
     });
     return results.map((result) => permission.filter(result));
@@ -143,13 +143,13 @@ export class UserControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
-        id: true,
         createdAt: true,
-        updatedAt: true,
         firstName: true,
+        id: true,
         lastName: true,
-        username: true,
         roles: true,
+        updatedAt: true,
+        username: true,
       },
     });
     if (result === null) {
@@ -203,13 +203,13 @@ export class UserControllerBase {
         where: params,
         data: data,
         select: {
-          id: true,
           createdAt: true,
-          updatedAt: true,
           firstName: true,
+          id: true,
           lastName: true,
-          username: true,
           roles: true,
+          updatedAt: true,
+          username: true,
         },
       });
     } catch (error) {
@@ -243,13 +243,13 @@ export class UserControllerBase {
       return await this.service.delete({
         where: params,
         select: {
-          id: true,
           createdAt: true,
-          updatedAt: true,
           firstName: true,
+          id: true,
           lastName: true,
-          username: true,
           roles: true,
+          updatedAt: true,
+          username: true,
         },
       });
     } catch (error) {
