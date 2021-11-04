@@ -1,0 +1,2 @@
+class OfekCreateInput {}
+export { OfekCreateInput };
