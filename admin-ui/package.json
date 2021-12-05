@@ -1,5 +1,5 @@
 {
-  "name": "test-online-admin",
+  "name": "sample-app-1-admin",
   "private": true,
   "dependencies": {
     "@apollo/client": "3.3.18",
