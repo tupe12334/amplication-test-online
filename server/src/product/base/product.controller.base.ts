@@ -17,7 +17,7 @@ import { ProductUpdateInput } from "./ProductUpdateInput";
 import { Product } from "./Product";
 import { OrderWhereInput } from "../../order/base/OrderWhereInput";
 import { Order } from "../../order/base/Order";
-@swagger.ApiBasicAuth()
+@swagger.ApiBearerAuth()
 export class ProductControllerBase {
   constructor(
     protected readonly service: ProductService,
@@ -62,12 +62,12 @@ export class ProductControllerBase {
     return await this.service.create({
       data: data,
       select: {
-        createdAt: true,
-        description: true,
         id: true,
-        itemPrice: true,
-        name: true,
+        createdAt: true,
         updatedAt: true,
+        name: true,
+        itemPrice: true,
+        description: true,
       },
     });
   }
@@ -105,12 +105,12 @@ export class ProductControllerBase {
     const results = await this.service.findMany({
       ...args,
       select: {
-        createdAt: true,
-        description: true,
         id: true,
-        itemPrice: true,
-        name: true,
+        createdAt: true,
         updatedAt: true,
+        name: true,
+        itemPrice: true,
+        description: true,
       },
     });
     return results.map((result) => permission.filter(result));
@@ -143,12 +143,12 @@ export class ProductControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
-        createdAt: true,
-        description: true,
         id: true,
-        itemPrice: true,
-        name: true,
+        createdAt: true,
         updatedAt: true,
+        name: true,
+        itemPrice: true,
+        description: true,
       },
     });
     if (result === null) {
@@ -202,12 +202,12 @@ export class ProductControllerBase {
         where: params,
         data: data,
         select: {
-          createdAt: true,
-          description: true,
           id: true,
-          itemPrice: true,
-          name: true,
+          createdAt: true,
           updatedAt: true,
+          name: true,
+          itemPrice: true,
+          description: true,
         },
       });
     } catch (error) {
@@ -241,12 +241,12 @@ export class ProductControllerBase {
       return await this.service.delete({
         where: params,
         select: {
-          createdAt: true,
-          description: true,
           id: true,
-          itemPrice: true,
-          name: true,
+          createdAt: true,
           updatedAt: true,
+          name: true,
+          itemPrice: true,
+          description: true,
         },
       });
     } catch (error) {
@@ -290,7 +290,12 @@ export class ProductControllerBase {
     const results = await this.service.findOrders(params.id, {
       where: query,
       select: {
+        id: true,
         createdAt: true,
+        updatedAt: true,
+        quantity: true,
+        discount: true,
+        totalPrice: true,
 
         customer: {
           select: {
@@ -298,18 +303,11 @@ export class ProductControllerBase {
           },
         },
 
-        discount: true,
-        id: true,
-
         product: {
           select: {
             id: true,
           },
         },
-
-        quantity: true,
-        totalPrice: true,
-        updatedAt: true,
       },
     });
     return results.map((result) => permission.filter(result));

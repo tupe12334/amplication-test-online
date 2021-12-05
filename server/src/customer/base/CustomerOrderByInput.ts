@@ -14,7 +14,7 @@ class CustomerOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  addressId?: SortOrder;
+  id?: SortOrder;
 
   @ApiProperty({
     required: false,
@@ -32,7 +32,7 @@ class CustomerOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  email?: SortOrder;
+  updatedAt?: SortOrder;
 
   @ApiProperty({
     required: false,
@@ -50,7 +50,7 @@ class CustomerOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  id?: SortOrder;
+  lastName?: SortOrder;
 
   @ApiProperty({
     required: false,
@@ -59,7 +59,7 @@ class CustomerOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  lastName?: SortOrder;
+  email?: SortOrder;
 
   @ApiProperty({
     required: false,
@@ -77,7 +77,7 @@ class CustomerOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  updatedAt?: SortOrder;
+  addressId?: SortOrder;
 }
 
 export { CustomerOrderByInput };
