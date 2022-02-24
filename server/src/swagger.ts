@@ -5,10 +5,10 @@ export const swaggerPath = "api";
 export const swaggerDocumentOptions = new DocumentBuilder()
   .setTitle("Test-online")
   .setDescription(
-    'Sample application for e-commerce\n\n## Congratulations! Your application is ready.\n  \nPlease note that all endpoints are secured with HTTP Basic authentication.\nBy default, your app comes with one user with the username "admin" and password "admin".\nLearn more in [our docs](https://docs.amplication.com)'
+    'Sample application for e-commerce\n\n## Congratulations! Your application is ready.\n  \nPlease note that all endpoints are secured with JWT Bearer authentication.\nBy default, your app comes with one user with the username "admin" and password "admin".\nLearn more in [our docs](https://docs.amplication.com)'
   )
-  .setVersion("glt8oh8e")
-  .addBasicAuth()
+  .setVersion("sw2yu6q5")
+  .addBearerAuth()
   .build();
 
 export const swaggerSetupOptions = {
