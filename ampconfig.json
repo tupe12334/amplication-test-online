@@ -1,9 +1,9 @@
 {
-  "dataServiceGeneratorVersion": "0.11.2",
+  "dataServiceGeneratorVersion": "0.11.4",
   "appInfo": {
     "name": "Test-online",
     "description": "Sample application for e-commerce",
-    "version": "glt8oh8e",
+    "version": "xrdr36ge",
     "id": "ckue038x54506301bs619h9oofa",
     "url": "https://app.amplication.com/ckue038x54506301bs619h9oofa",
     "settings": {
@@ -13,7 +13,7 @@
       "dbPort": 5432,
       "dbUser": "admin",
       "appId": "ckue038x54506301bs619h9oofa",
-      "authProvider": "Http"
+      "authProvider": "Jwt"
     }
   }
 }
