@@ -25,7 +25,7 @@ import { ProductList } from "./product/ProductList";
 import { ProductCreate } from "./product/ProductCreate";
 import { ProductEdit } from "./product/ProductEdit";
 import { ProductShow } from "./product/ProductShow";
-import { httpAuthProvider } from "./auth-provider/ra-auth-http";
+import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
   const [dataProvider, setDataProvider] = useState<DataProvider | null>(null);
@@ -46,7 +46,7 @@ const App = (): React.ReactElement => {
       <Admin
         title={"Test-online"}
         dataProvider={dataProvider}
-        authProvider={httpAuthProvider}
+        authProvider={jwtAuthProvider}
         theme={theme}
         dashboard={Dashboard}
         loginPage={Login}
