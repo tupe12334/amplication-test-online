@@ -11,14 +11,25 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
-import { CustomerListRelationFilter } from "../../customer/base/CustomerListRelationFilter";
-import { StringFilter } from "../../util/StringFilter";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { IntNullableFilter } from "../../util/IntNullableFilter";
+import { CustomerListRelationFilter } from "../../customer/base/CustomerListRelationFilter";
 @InputType()
 class AddressWhereInput {
+  @ApiProperty({
+    required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  id?: StringFilter;
+
   @ApiProperty({
     required: false,
     type: StringNullableFilter,
@@ -54,29 +65,6 @@ class AddressWhereInput {
 
   @ApiProperty({
     required: false,
-    type: () => CustomerListRelationFilter,
-  })
-  @ValidateNested()
-  @Type(() => CustomerListRelationFilter)
-  @IsOptional()
-  @Field(() => CustomerListRelationFilter, {
-    nullable: true,
-  })
-  customers?: CustomerListRelationFilter;
-
-  @ApiProperty({
-    required: false,
-    type: StringFilter,
-  })
-  @Type(() => StringFilter)
-  @IsOptional()
-  @Field(() => StringFilter, {
-    nullable: true,
-  })
-  id?: StringFilter;
-
-  @ApiProperty({
-    required: false,
     type: StringNullableFilter,
   })
   @Type(() => StringNullableFilter)
@@ -96,5 +84,17 @@ class AddressWhereInput {
     nullable: true,
   })
   zip?: IntNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: () => CustomerListRelationFilter,
+  })
+  @ValidateNested()
+  @Type(() => CustomerListRelationFilter)
+  @IsOptional()
+  @Field(() => CustomerListRelationFilter, {
+    nullable: true,
+  })
+  customers?: CustomerListRelationFilter;
 }
 export { AddressWhereInput };

@@ -27,11 +27,11 @@ class UserFindManyArgs {
 
   @ApiProperty({
     required: false,
-    type: UserOrderByInput,
+    type: [UserOrderByInput],
   })
-  @Field(() => UserOrderByInput, { nullable: true })
+  @Field(() => [UserOrderByInput], { nullable: true })
   @Type(() => UserOrderByInput)
-  orderBy?: UserOrderByInput;
+  orderBy?: Array<UserOrderByInput>;
 
   @ApiProperty({
     required: false,

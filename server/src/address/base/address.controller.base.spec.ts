@@ -11,45 +11,45 @@ import { AddressService } from "../address.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  id: "exampleId",
+  createdAt: new Date(),
+  updatedAt: new Date(),
   address_1: "exampleAddress_1",
   address_2: "exampleAddress_2",
   city: "exampleCity",
-  createdAt: new Date(),
-  id: "exampleId",
   state: "exampleState",
-  updatedAt: new Date(),
   zip: 42,
 };
 const CREATE_RESULT = {
+  id: "exampleId",
+  createdAt: new Date(),
+  updatedAt: new Date(),
   address_1: "exampleAddress_1",
   address_2: "exampleAddress_2",
   city: "exampleCity",
-  createdAt: new Date(),
-  id: "exampleId",
   state: "exampleState",
-  updatedAt: new Date(),
   zip: 42,
 };
 const FIND_MANY_RESULT = [
   {
+    id: "exampleId",
+    createdAt: new Date(),
+    updatedAt: new Date(),
     address_1: "exampleAddress_1",
     address_2: "exampleAddress_2",
     city: "exampleCity",
-    createdAt: new Date(),
-    id: "exampleId",
     state: "exampleState",
-    updatedAt: new Date(),
     zip: 42,
   },
 ];
 const FIND_ONE_RESULT = {
+  id: "exampleId",
+  createdAt: new Date(),
+  updatedAt: new Date(),
   address_1: "exampleAddress_1",
   address_2: "exampleAddress_2",
   city: "exampleCity",
-  createdAt: new Date(),
-  id: "exampleId",
   state: "exampleState",
-  updatedAt: new Date(),
   zip: 42,
 };
 
@@ -137,9 +137,9 @@ describe("Address", () => {
   test("GET /addresses/:id non existing", async () => {
     await request(app.getHttpServer())
       .get(`${"/addresses"}/${nonExistingId}`)
-      .expect(404)
+      .expect(HttpStatus.NOT_FOUND)
       .expect({
-        statusCode: 404,
+        statusCode: HttpStatus.NOT_FOUND,
         message: `No resource was found for {"${"id"}":"${nonExistingId}"}`,
         error: "Not Found",
       });
