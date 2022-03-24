@@ -11,20 +11,19 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { Address } from "../../address/base/Address";
-import { ValidateNested, IsOptional, IsDate, IsString } from "class-validator";
+import { IsString, IsDate, IsOptional, ValidateNested } from "class-validator";
 import { Type } from "class-transformer";
 import { Order } from "../../order/base/Order";
+import { Address } from "../../address/base/Address";
 @ObjectType()
 class Customer {
   @ApiProperty({
-    required: false,
-    type: () => Address,
+    required: true,
+    type: String,
   })
-  @ValidateNested()
-  @Type(() => Address)
-  @IsOptional()
-  address?: Address | null;
+  @IsString()
+  @Field(() => String)
+  id!: string;
 
   @ApiProperty({
     required: true,
@@ -33,6 +32,36 @@ class Customer {
   @Type(() => Date)
   @Field(() => Date)
   createdAt!: Date;
+
+  @ApiProperty({
+    required: true,
+  })
+  @IsDate()
+  @Type(() => Date)
+  @Field(() => Date)
+  updatedAt!: Date;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  firstName!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  lastName!: string | null;
 
   @ApiProperty({
     required: false,
@@ -54,26 +83,7 @@ class Customer {
   @Field(() => String, {
     nullable: true,
   })
-  firstName!: string | null;
-
-  @ApiProperty({
-    required: true,
-    type: String,
-  })
-  @IsString()
-  @Field(() => String)
-  id!: string;
-
-  @ApiProperty({
-    required: false,
-    type: String,
-  })
-  @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  lastName!: string | null;
+  phone!: string | null;
 
   @ApiProperty({
     required: false,
@@ -86,21 +96,11 @@ class Customer {
 
   @ApiProperty({
     required: false,
-    type: String,
+    type: () => Address,
   })
-  @IsString()
+  @ValidateNested()
+  @Type(() => Address)
   @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  phone!: string | null;
-
-  @ApiProperty({
-    required: true,
-  })
-  @IsDate()
-  @Type(() => Date)
-  @Field(() => Date)
-  updatedAt!: Date;
+  address?: Address | null;
 }
 export { Customer };
