@@ -27,11 +27,11 @@ class AddressFindManyArgs {
 
   @ApiProperty({
     required: false,
-    type: AddressOrderByInput,
+    type: [AddressOrderByInput],
   })
-  @Field(() => AddressOrderByInput, { nullable: true })
+  @Field(() => [AddressOrderByInput], { nullable: true })
   @Type(() => AddressOrderByInput)
-  orderBy?: AddressOrderByInput;
+  orderBy?: Array<AddressOrderByInput>;
 
   @ApiProperty({
     required: false,

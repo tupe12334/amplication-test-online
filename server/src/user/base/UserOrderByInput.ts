@@ -20,25 +20,7 @@ import { SortOrder } from "../../util/SortOrder";
 class UserOrderByInput {
   @ApiProperty({
     required: false,
-    enum: ["Asc", "Desc"],
-  })
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
-  createdAt?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["Asc", "Desc"],
-  })
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
-  firstName?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["Asc", "Desc"],
+    enum: ["asc", "desc"],
   })
   @Field(() => SortOrder, {
     nullable: true,
@@ -47,34 +29,16 @@ class UserOrderByInput {
 
   @ApiProperty({
     required: false,
-    enum: ["Asc", "Desc"],
+    enum: ["asc", "desc"],
   })
   @Field(() => SortOrder, {
     nullable: true,
   })
-  lastName?: SortOrder;
+  createdAt?: SortOrder;
 
   @ApiProperty({
     required: false,
-    enum: ["Asc", "Desc"],
-  })
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
-  password?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["Asc", "Desc"],
-  })
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
-  roles?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["Asc", "Desc"],
+    enum: ["asc", "desc"],
   })
   @Field(() => SortOrder, {
     nullable: true,
@@ -83,12 +47,48 @@ class UserOrderByInput {
 
   @ApiProperty({
     required: false,
-    enum: ["Asc", "Desc"],
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  firstName?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  lastName?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
   })
   @Field(() => SortOrder, {
     nullable: true,
   })
   username?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  password?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  roles?: SortOrder;
 }
 
 export { UserOrderByInput };

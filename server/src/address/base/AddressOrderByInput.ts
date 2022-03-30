@@ -20,43 +20,7 @@ import { SortOrder } from "../../util/SortOrder";
 class AddressOrderByInput {
   @ApiProperty({
     required: false,
-    enum: ["Asc", "Desc"],
-  })
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
-  address_1?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["Asc", "Desc"],
-  })
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
-  address_2?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["Asc", "Desc"],
-  })
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
-  city?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["Asc", "Desc"],
-  })
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
-  createdAt?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["Asc", "Desc"],
+    enum: ["asc", "desc"],
   })
   @Field(() => SortOrder, {
     nullable: true,
@@ -65,16 +29,16 @@ class AddressOrderByInput {
 
   @ApiProperty({
     required: false,
-    enum: ["Asc", "Desc"],
+    enum: ["asc", "desc"],
   })
   @Field(() => SortOrder, {
     nullable: true,
   })
-  state?: SortOrder;
+  createdAt?: SortOrder;
 
   @ApiProperty({
     required: false,
-    enum: ["Asc", "Desc"],
+    enum: ["asc", "desc"],
   })
   @Field(() => SortOrder, {
     nullable: true,
@@ -83,7 +47,43 @@ class AddressOrderByInput {
 
   @ApiProperty({
     required: false,
-    enum: ["Asc", "Desc"],
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  address_1?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  address_2?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  city?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  state?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
   })
   @Field(() => SortOrder, {
     nullable: true,
