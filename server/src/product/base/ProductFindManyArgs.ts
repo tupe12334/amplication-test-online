@@ -27,11 +27,11 @@ class ProductFindManyArgs {
 
   @ApiProperty({
     required: false,
-    type: ProductOrderByInput,
+    type: [ProductOrderByInput],
   })
-  @Field(() => ProductOrderByInput, { nullable: true })
+  @Field(() => [ProductOrderByInput], { nullable: true })
   @Type(() => ProductOrderByInput)
-  orderBy?: ProductOrderByInput;
+  orderBy?: Array<ProductOrderByInput>;
 
   @ApiProperty({
     required: false,
