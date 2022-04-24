@@ -86,7 +86,12 @@ export class OrderControllerBase {
           : undefined,
       },
       select: {
+        id: true,
         createdAt: true,
+        updatedAt: true,
+        quantity: true,
+        discount: true,
+        totalPrice: true,
 
         customer: {
           select: {
@@ -94,18 +99,11 @@ export class OrderControllerBase {
           },
         },
 
-        discount: true,
-        id: true,
-
         product: {
           select: {
             id: true,
           },
         },
-
-        quantity: true,
-        totalPrice: true,
-        updatedAt: true,
       },
     });
   }
@@ -139,7 +137,12 @@ export class OrderControllerBase {
     const results = await this.service.findMany({
       ...args,
       select: {
+        id: true,
         createdAt: true,
+        updatedAt: true,
+        quantity: true,
+        discount: true,
+        totalPrice: true,
 
         customer: {
           select: {
@@ -147,18 +150,11 @@ export class OrderControllerBase {
           },
         },
 
-        discount: true,
-        id: true,
-
         product: {
           select: {
             id: true,
           },
         },
-
-        quantity: true,
-        totalPrice: true,
-        updatedAt: true,
       },
     });
     return results.map((result) => permission.filter(result));
@@ -191,7 +187,12 @@ export class OrderControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        id: true,
         createdAt: true,
+        updatedAt: true,
+        quantity: true,
+        discount: true,
+        totalPrice: true,
 
         customer: {
           select: {
@@ -199,18 +200,11 @@ export class OrderControllerBase {
           },
         },
 
-        discount: true,
-        id: true,
-
         product: {
           select: {
             id: true,
           },
         },
-
-        quantity: true,
-        totalPrice: true,
-        updatedAt: true,
       },
     });
     if (result === null) {
@@ -278,7 +272,12 @@ export class OrderControllerBase {
             : undefined,
         },
         select: {
+          id: true,
           createdAt: true,
+          updatedAt: true,
+          quantity: true,
+          discount: true,
+          totalPrice: true,
 
           customer: {
             select: {
@@ -286,18 +285,11 @@ export class OrderControllerBase {
             },
           },
 
-          discount: true,
-          id: true,
-
           product: {
             select: {
               id: true,
             },
           },
-
-          quantity: true,
-          totalPrice: true,
-          updatedAt: true,
         },
       });
     } catch (error) {
@@ -331,7 +323,12 @@ export class OrderControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          id: true,
           createdAt: true,
+          updatedAt: true,
+          quantity: true,
+          discount: true,
+          totalPrice: true,
 
           customer: {
             select: {
@@ -339,18 +336,11 @@ export class OrderControllerBase {
             },
           },
 
-          discount: true,
-          id: true,
-
           product: {
             select: {
               id: true,
             },
           },
-
-          quantity: true,
-          totalPrice: true,
-          updatedAt: true,
         },
       });
     } catch (error) {
