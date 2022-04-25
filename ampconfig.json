@@ -3,16 +3,16 @@
   "appInfo": {
     "name": "Test-online",
     "description": "Sample application for e-commerce",
-    "version": "2wmla5a9",
-    "id": "ckue038x54506301bs619h9oofa",
-    "url": "https://app.amplication.com/ckue038x54506301bs619h9oofa",
+    "version": "8qjmkqod",
+    "id": "ckzycbeg310984301s6uytmkhfx",
+    "url": "https://staging-oc.amplication.com/ckzycbeg310984301s6uytmkhfx",
     "settings": {
       "dbHost": "localhost",
       "dbName": "",
       "dbPassword": "admin",
       "dbPort": 5432,
       "dbUser": "admin",
-      "appId": "ckue038x54506301bs619h9oofa",
+      "appId": "ckzycbeg310984301s6uytmkhfx",
       "authProvider": "Jwt"
     }
   }
