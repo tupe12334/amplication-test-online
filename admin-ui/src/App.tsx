@@ -25,6 +25,14 @@ import { ProductList } from "./product/ProductList";
 import { ProductCreate } from "./product/ProductCreate";
 import { ProductEdit } from "./product/ProductEdit";
 import { ProductShow } from "./product/ProductShow";
+import { FhgsdList } from "./fhgsd/FhgsdList";
+import { FhgsdCreate } from "./fhgsd/FhgsdCreate";
+import { FhgsdEdit } from "./fhgsd/FhgsdEdit";
+import { FhgsdShow } from "./fhgsd/FhgsdShow";
+import { HgjList } from "./hgj/HgjList";
+import { HgjCreate } from "./hgj/HgjCreate";
+import { HgjEdit } from "./hgj/HgjEdit";
+import { HgjShow } from "./hgj/HgjShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -44,7 +52,7 @@ const App = (): React.ReactElement => {
   return (
     <div className="App">
       <Admin
-        title={"Test-online"}
+        title={"Sample app-1"}
         dataProvider={dataProvider}
         authProvider={jwtAuthProvider}
         theme={theme}
@@ -85,6 +93,20 @@ const App = (): React.ReactElement => {
           edit={ProductEdit}
           create={ProductCreate}
           show={ProductShow}
+        />
+        <Resource
+          name="Fhgsd"
+          list={FhgsdList}
+          edit={FhgsdEdit}
+          create={FhgsdCreate}
+          show={FhgsdShow}
+        />
+        <Resource
+          name="Hgj"
+          list={HgjList}
+          edit={HgjEdit}
+          create={HgjCreate}
+          show={HgjShow}
         />
       </Admin>
     </div>
